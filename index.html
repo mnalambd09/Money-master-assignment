@@ -29,12 +29,8 @@
         <div class="side-nav bg-black text-white w-25">
           <div>
             <h1 class="text-center p-3">Selected - V</h1>
-            <ol>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
+            <ol id="item-list">
+
             </ol>
           </div>
       </div>
@@ -48,17 +44,17 @@
                     <p>Per Player :</p>
                   </div>
                   <div class="col-6">
-                    <input class="w-100" type="number"></p>
+                    <input id="per-player" class="w-100" type="number"></p>
                   </div>
                 </div>
-                <button class="btn btn-primary btn-lg fs-3 rounded-0 rounded-0 w-100 fw-bold my-3">Calculate</button>
-                <h4 class="my-2">Player Expenses $<span>5000</span></43>
+                <button id="btn-calculate" class="btn btn-primary btn-lg fs-3 rounded-0 rounded-0 w-100 fw-bold my-3">Calculate</button>
+                <h4 class="my-2">Player Expenses $<span id="player-expenses">00</span></43>
                 <div class="row justify-content-between fs-5 fw-bold mt-3">
                   <div class="col-6">
                     <p>Manager :</p>
                   </div>
                   <div class="col-6">
-                    <input class="w-100" type="number"></p>
+                    <input id="manager-budget" class="w-100 p-1" type="number"></p>
                   </div>
                 </div>
                 <div class="row justify-content-between fs-5 fw-bold mt-3">
@@ -66,16 +62,16 @@
                     <p>Coach :</p>
                   </div>
                   <div class="col-6">
-                    <input class="w-100" type="number"></p>
+                    <input id="coach-Budget" class="w-100 p-1" type="number"></p>
                   </div>
                 </div>
-                <button class="btn btn-primary btn-lg fs-3 rounded-0 rounded-0 w-100 fw-bold mt-3">Calculate Total</button>
+                <button id="btn-calculation-total" class="btn btn-primary btn-lg fs-3 rounded-0 rounded-0 w-100 fw-bold mt-3">Calculate Total</button>
                 <div class="row justify-content-between fs-5 fw-bold mt-3">
                   <div class="col-4">
                     <p>Total</p>
                   </div>
                   <div class="col-4">
-                    <p class="text-warning ">$<span>5000</span></p>
+                    <p class="text-warning ">$<span id="total-cost">00</span></p>
                   </div>
                 </div>
               </div>
@@ -89,7 +85,7 @@
               <h3 class="card-title text-center fw-bold">Lionel Messi</h3>
               <p class="card-text text-center fw-bold">36 Goals . 120 Assist</p>
               <div class="d-grid">
-                <button type="button" class="btn btn-primary btn-lg fs-3 rounded-0 rounded-0">SELECT</button>
+                <button id="add-Messi" type="button" class="btn btn-primary btn-lg fs-3 rounded-0 rounded-0">SELECT</button>
               </div>
             </div>
           </div>
@@ -201,5 +197,6 @@
       </div>
     </section>
     <!-- footer secton end -->
+    <script src="js/app.js"></script>
 </body>
 </html>
