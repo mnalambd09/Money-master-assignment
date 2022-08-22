@@ -24,28 +24,40 @@ function addPlayerName(playerName){
     addItem.appendChild(li);
 }
 
+function disableBtn(btnDisableId) {
+    document.getElementById(btnDisableId).disabled = true;
+    document.getElementById(btnDisableId).style.backgroundColor = "gray";
+    
+  }
+
 document.getElementById('add-Messi').addEventListener('click', function(){
     addPlayerName('Lionel Messi');
+    disableBtn('add-Messi');
    
   })
 document.getElementById('add-Neymar').addEventListener('click', function(){
     addPlayerName('Neymar Jr');
+    disableBtn('add-Neymar');
    
   })
 document.getElementById('add-Kylian').addEventListener('click', function(){
     addPlayerName('Kylian Mbapp');
+    disableBtn('add-Kylian');
    
   })
 document.getElementById('add-Vítor').addEventListener('click', function(){
     addPlayerName('Vitor Machado');
+    disableBtn('add-Vítor');
    
   })
 document.getElementById('add-Sergio').addEventListener('click', function(){
     addPlayerName('Sergio Ramos');
+    disableBtn('add-Sergio');
    
   })
 document.getElementById('add-Renato').addEventListener('click', function(){
     addPlayerName('Renato Sanches');
+    disableBtn('add-Renato');
    
   })
 
@@ -72,3 +84,4 @@ document.getElementById('btn-calculation-total').addEventListener('click', funct
 
     
 })
+
