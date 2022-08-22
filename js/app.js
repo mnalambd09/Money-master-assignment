@@ -24,40 +24,41 @@ function addPlayerName(playerName){
     addItem.appendChild(li);
 }
 
-function disableBtn(btnDisableId) {
-    document.getElementById(btnDisableId).disabled = true;
-    document.getElementById(btnDisableId).style.backgroundColor = "gray";
-    
-  }
-
 document.getElementById('add-Messi').addEventListener('click', function(){
     addPlayerName('Lionel Messi');
-    disableBtn('add-Messi');
+    document.getElementById('add-Messi').disabled = true;
+    document.getElementById('add-Messi').style.backgroundColor = "gray";
    
   })
 document.getElementById('add-Neymar').addEventListener('click', function(){
     addPlayerName('Neymar Jr');
-    disableBtn('add-Neymar');
+    document.getElementById('add-Neymar').disabled = true;
+    document.getElementById('add-Neymar').style.backgroundColor = "gray";
    
   })
 document.getElementById('add-Kylian').addEventListener('click', function(){
     addPlayerName('Kylian Mbapp');
-    disableBtn('add-Kylian');
+    document.getElementById('add-Kylian').disabled = true;
+    document.getElementById('add-Kylian').style.backgroundColor = "gray";
+
    
   })
 document.getElementById('add-Vítor').addEventListener('click', function(){
     addPlayerName('Vitor Machado');
-    disableBtn('add-Vítor');
+    document.getElementById('add-Vítor').disabled = true;
+    document.getElementById('add-Vítor').style.backgroundColor = "gray";
    
   })
 document.getElementById('add-Sergio').addEventListener('click', function(){
     addPlayerName('Sergio Ramos');
-    disableBtn('add-Sergio');
+    document.getElementById('add-Sergio').disabled = true;
+    document.getElementById('add-Sergio').style.backgroundColor = "gray";
    
   })
 document.getElementById('add-Renato').addEventListener('click', function(){
     addPlayerName('Renato Sanches');
-    disableBtn('add-Renato');
+    document.getElementById('add-Renato').disabled = true;
+    document.getElementById('add-Renato').style.backgroundColor = "gray";
    
   })
 
@@ -65,8 +66,10 @@ document.getElementById('add-Renato').addEventListener('click', function(){
 document.getElementById('btn-calculate').addEventListener('click', function(){
     const perPlayerBudget = getInputValueById('per-player');
 
-    const totalPlayer = 5;
-    const playerTotalExpenses = perPlayerBudget * totalPlayer;
+    let playerQuantity = document.getElementById('item-list').children.length;
+    let playerQuantityValue = parseInt(playerQuantity);
+
+    const playerTotalExpenses = perPlayerBudget * playerQuantityValue;
     const playerExpenses = getTextValueById('player-expenses');
     setTextElementValueById('player-expenses', playerTotalExpenses);
 })
@@ -76,12 +79,13 @@ document.getElementById('btn-calculation-total').addEventListener('click', funct
     const coachBudget = getInputValueById('coach-Budget');
     const perPlayerBudget = getInputValueById('per-player');
 
-    const totalPlayer = 5;
-    const playerTotalExpenses = perPlayerBudget * totalPlayer;
+    let playerQuantity = document.getElementById('item-list').children.length;
+    let playerQuantityValue = parseInt(playerQuantity);
+
+    const playerTotalExpenses = perPlayerBudget * playerQuantityValue;
     
     const totalCost = managerBudget + coachBudget + playerTotalExpenses;
     setTextElementValueById('total-cost', totalCost);
 
     
 })
-
