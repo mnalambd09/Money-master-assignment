@@ -31,3 +31,20 @@
   .hr{
     border: 2px solid black;
   }
+  .side-nav{
+    position:absolute;
+    right: 50px;
+    margin-top: 25px;
+   height: 400px;
+   background-color: white;
+   border: none;
+   
+}
+.side-nav-2{
+  position:absolute;
+  right: 50px;
+  margin-top: 450px;
+ background-color: white;
+ border: none;
+ 
+}
