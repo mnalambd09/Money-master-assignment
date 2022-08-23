@@ -31,7 +31,7 @@ function addPlayerName(playerName){
 
     if(playerString > 5){
        const list = document.getElementById('item-list');
-      list.removeChild(list.firstElementChild);
+      list.removeChild(list.lasttElementChild);
       alert('you can not select more than 5 player')
     }
     else{
