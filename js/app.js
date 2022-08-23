@@ -23,22 +23,19 @@ function addPlayerName(playerName){
     li.innerText = playerName;
     addItem.appendChild(li);
   
-    console.log(li.parentNode.children.length);
     const playerLength = li.parentNode.children.length;
     const playerString = parseFloat(playerLength);
     const playerQuantity = document.getElementById('player-Quantity');
     
-
     if(playerString > 5){
        const list = document.getElementById('item-list');
-      list.removeChild(list.lastElementChild);
-      alert('you can not select more than 5 player')
+       list.removeChild(list.lastElementChild);
+       alert('You can not select more than 5 player')
     }
     else{
       playerQuantity.innerText = playerString;
       // alert('you can not select more than 5 player')
     }
-
 }
 
 document.getElementById('add-Messi').addEventListener('click', function(){
@@ -104,28 +101,25 @@ document.getElementById('btn-calculate').addEventListener('click', function(){
     let playerQuantityValue = parseInt(playerQuantity);
 
     if(isNaN(perPlayerBudget) || perPlayerBudget < 0){
-      alert('please input a valid number');
+      alert('Please input a valid or Positive number');
     }
     else{
       const playerTotalExpenses = perPlayerBudget * playerQuantityValue;
      const playerExpenses = getTextValueById('player-expenses');
      setTextElementValueById('player-expenses', playerTotalExpenses);
     }
-
 })
 
 document.getElementById('btn-calculation-total').addEventListener('click', function(){
-    
     const managerBudget = getInputValueById('manager-budget');
     const coachBudget = getInputValueById('coach-Budget');
     const perPlayerBudget = getInputValueById('per-player');
 
     let playerQuantity = document.getElementById('item-list').children.length;
-    console.log(playerQuantity);
     if(playerQuantity >= 6){
         const removeChiled = document.getElementById('item-list');
         removeChiled.pop();
-        alert('You can not select more then 5 players');
+        alert('You can not select more than 5 players');
     }
     else{
         let playerQuantityValue = parseInt(playerQuantity);
@@ -134,11 +128,9 @@ document.getElementById('btn-calculation-total').addEventListener('click', funct
          }
          else{
         const playerTotalExpenses = perPlayerBudget * playerQuantityValue;
-    
         const totalCost = managerBudget + coachBudget + playerTotalExpenses;
         setTextElementValueById('total-cost', totalCost);
     }
     }
-    
 })
 
