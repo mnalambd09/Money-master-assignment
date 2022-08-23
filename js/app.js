@@ -22,6 +22,23 @@ function addPlayerName(playerName){
     const li = document.createElement('li');
     li.innerText = playerName;
     addItem.appendChild(li);
+  
+    console.log(li.parentNode.children.length);
+    const playerLength = li.parentNode.children.length;
+    const playerString = parseFloat(playerLength);
+    const playerQuantity = document.getElementById('player-Quantity');
+    
+
+    if(playerString > 5){
+       const list = document.getElementById('item-list');
+      list.removeChild(list.firstElementChild);
+      alert('you can not select more than 5 player')
+    }
+    else{
+      playerQuantity.innerText = playerString;
+      // alert('you can not select more than 5 player')
+    }
+
 }
 
 document.getElementById('add-Messi').addEventListener('click', function(){
@@ -61,7 +78,24 @@ document.getElementById('add-Renato').addEventListener('click', function(){
     document.getElementById('add-Renato').style.backgroundColor = "gray";
    
   })
-
+  document.getElementById('add-Messi-2').addEventListener('click', function(){
+    addPlayerName('Sadio-Mane');
+    document.getElementById('add-Messi-2').disabled = true;
+    document.getElementById('add-Messi-2').style.backgroundColor = "gray";
+   
+  })
+  document.getElementById('add-Messi-3').addEventListener('click', function(){
+    addPlayerName('Bayern Muenchen');
+    document.getElementById('add-Messi-3').disabled = true;
+    document.getElementById('add-Messi-3').style.backgroundColor = "gray";
+   
+  })
+  document.getElementById('add-Messi-4').addEventListener('click', function(){
+    addPlayerName('Cristiano Ronaldo');
+    document.getElementById('add-Messi-4').disabled = true;
+    document.getElementById('add-Messi-4').style.backgroundColor = "gray";
+   
+  })
 
 document.getElementById('btn-calculate').addEventListener('click', function(){
     const perPlayerBudget = getInputValueById('per-player');
@@ -69,23 +103,42 @@ document.getElementById('btn-calculate').addEventListener('click', function(){
     let playerQuantity = document.getElementById('item-list').children.length;
     let playerQuantityValue = parseInt(playerQuantity);
 
-    const playerTotalExpenses = perPlayerBudget * playerQuantityValue;
-    const playerExpenses = getTextValueById('player-expenses');
-    setTextElementValueById('player-expenses', playerTotalExpenses);
+    if(isNaN(perPlayerBudget) || perPlayerBudget < 0){
+      alert('please input a valid number');
+    }
+    else{
+      const playerTotalExpenses = perPlayerBudget * playerQuantityValue;
+     const playerExpenses = getTextValueById('player-expenses');
+     setTextElementValueById('player-expenses', playerTotalExpenses);
+    }
+
 })
 
 document.getElementById('btn-calculation-total').addEventListener('click', function(){
+    
     const managerBudget = getInputValueById('manager-budget');
     const coachBudget = getInputValueById('coach-Budget');
     const perPlayerBudget = getInputValueById('per-player');
 
     let playerQuantity = document.getElementById('item-list').children.length;
-    let playerQuantityValue = parseInt(playerQuantity);
-
-    const playerTotalExpenses = perPlayerBudget * playerQuantityValue;
+    console.log(playerQuantity);
+    if(playerQuantity >= 6){
+        const removeChiled = document.getElementById('item-list');
+        removeChiled.pop();
+        alert('You can not select more then 5 players');
+    }
+    else{
+        let playerQuantityValue = parseInt(playerQuantity);
+        if(isNaN(managerBudget) || isNaN(coachBudget) || isNaN(perPlayerBudget) || managerBudget < 0 || coachBudget < 0 || perPlayerBudget < 0){
+        alert('Please Enter a valid or a positive number');
+         }
+         else{
+        const playerTotalExpenses = perPlayerBudget * playerQuantityValue;
     
-    const totalCost = managerBudget + coachBudget + playerTotalExpenses;
-    setTextElementValueById('total-cost', totalCost);
-
+        const totalCost = managerBudget + coachBudget + playerTotalExpenses;
+        setTextElementValueById('total-cost', totalCost);
+    }
+    }
     
 })
+
